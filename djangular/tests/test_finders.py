@@ -11,7 +11,7 @@ APP_BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 class NamespacedAngularAppDirectoriesFinderTest(SimpleTestCase):
     @test_with_angularseed_template_as_django_app
     def test_find(self):
-        if django.get_version() >= '1.7':
+        if django.VERSION >= (1, 7):
             finder = finders.NamespacedAngularAppDirectoriesFinder(
                 app_names=['djangular.config.angularseed_template'])
         else:
@@ -31,7 +31,7 @@ class NamespacedE2ETestAppDirectoriesFinderTest(SimpleTestCase):
     def test_find(self):
         self.skipTest('E2E Testing is not implemented yet...')
 
-        if django.get_version() >= '1.7':
+        if django.VERSION >= (1, 7):
             finder = finders.NamespacedE2ETestAppDirectoriesFinder(
                 app_names=['djangular.config.angularseed_template'])
         else:

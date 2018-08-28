@@ -10,7 +10,7 @@ def _call_test_func(self, test_fn):
     apps = None
     need_to_call_unset = False
 
-    if django.get_version() >= '1.7':
+    if django.VERSION >= (1, 7):
         from django.apps import apps
 
         if not apps.is_installed('djangular.config.angularseed_template'):

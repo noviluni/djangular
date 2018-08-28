@@ -2,7 +2,8 @@ import django
 from django.contrib.staticfiles import finders as s_finders
 
 # Django rewrote the staticfiles storage internals in 1.7, so...
-if django.get_version() >= '1.7':
+if django.VERSION >= (1, 7):
+   
     import os
     import re
 
@@ -17,7 +18,7 @@ if django.get_version() >= '1.7':
             super(NamespacedAppDirectoriesFinder, self).__init__(
                 app_names, *args, **kwargs)
 
-            for app_name, storage in self.storages.items():
+            for app_name, storage in list(self.storages.items()):
                 storage.prefix = os.path.join(*(app_name.split('.')))
 
         def find_in_app(self, app, path):

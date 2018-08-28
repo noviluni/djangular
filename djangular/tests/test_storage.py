@@ -1,6 +1,6 @@
 import django
 
-if django.get_version() < '1.7':
+if django.VERSION < (1, 7):
     from djangular import storage
     from django.test import SimpleTestCase
 

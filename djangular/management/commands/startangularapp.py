@@ -11,7 +11,7 @@ class Command(utils.SiteAndPathUtils, TemplateCommand):
             "name in the current directory or optionally in the given "
             "directory.")
 
-    if django.get_version() >= "1.7":
+    if django.VERSION >= (1, 7):
         requires_system_checks = False
     else:
         requires_model_validation = False
