@@ -48,7 +48,7 @@ var djangular = angular.module('djangular', []).
     directive('csrfToken', function() {
         return {
             restrict: 'E',
-            template: "{% csrf_token %}" || "<span></span>",
+            template: '{% csrf_token %}' || "<span></span>",
             replace: true
         };
     });
